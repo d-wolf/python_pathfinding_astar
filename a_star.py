@@ -47,12 +47,12 @@ class AStar:
     __closed_list: List[Node] = []
 
     def __init__(self, arr2d: List[List[int]]):
-        xLen, yLen = (len(arr2d), len(arr2d[0]))
-        self.__layout = [[Node.empty() for _ in range(yLen)]
-                         for _ in range(xLen)]
+        x_len, y_len = (len(arr2d), len(arr2d[0]))
+        self.__layout = [[Node.empty() for _ in range(y_len)]
+                         for _ in range(x_len)]
 
-        for x in range(xLen):
-            for y in range(yLen):
+        for x in range(x_len):
+            for y in range(y_len):
                 node = Node(x, y, NodeType(NodeType.from_value(arr2d[x][y])))
                 self.__layout[x][y] = node
                 if node.is_start():
